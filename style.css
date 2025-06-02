@@ -1,1 +1,140 @@
 /* Add your CSS here */
+
+/* Intel-branded blue background for the header */
+header {
+  background-color: #0071c5; /* Intel blue */
+  color: #fff; /* White text for contrast */
+  padding: 40px 0 30px 0; /* Top and bottom padding */
+  text-align: center; /* Center all header content */
+}
+
+/* Logo styling */
+header img {
+  width: 120px; /* Set logo width */
+  height: auto; /* Keep aspect ratio */
+  margin-bottom: 16px; /* Space below logo */
+}
+
+/* Main headline styling */
+header h1 {
+  font-size: 2.2rem; /* Large headline */
+  margin: 10px 0 8px 0; /* Space above and below */
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Subheading styling */
+header p {
+  font-size: 1.1rem;
+  margin: 0 auto;
+  max-width: 500px; /* Limit width for readability */
+  color: #e0eefa; /* Softer white for subheading */
+}
+
+/* Timeline section container */
+section {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto; /* Enable horizontal scroll on large screens */
+  gap: 20px; /* Space between cards */
+  padding: 30px 20px 20px 20px;
+  background: #f5faff; /* Light background for contrast */
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory; /* Enable horizontal scroll snap */
+}
+
+/* Timeline card styling */
+section > div {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  min-width: 260px;
+  max-width: 280px;
+  flex: 0 0 260px; /* Prevent shrinking, allow horizontal scroll */
+  padding: 18px 14px 20px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s cubic-bezier(0.4,0.2,0.2,1), box-shadow 0.25s cubic-bezier(0.4,0.2,0.2,1);
+  scroll-snap-align: start; /* Snap each card to the start of the scroll area */
+}
+
+/* Card hover effect */
+section > div:hover {
+  transform: translateY(-10px) scale(1.05) rotate(-1deg); /* More dynamic movement */
+  box-shadow: 0 10px 24px rgba(0,113,197,0.18), 0 2px 8px rgba(0,0,0,0.10);
+}
+
+/* Card headings */
+section h2 {
+  font-size: 1.1rem;
+  color: #0071c5;
+  margin: 0 0 4px 0;
+}
+section h3 {
+  font-size: 1.05rem;
+  margin: 0 0 10px 0;
+  color: #222;
+}
+
+/* Card images */
+section img {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* Card text */
+section p {
+  font-size: 0.98rem;
+  color: #333;
+  margin: 0;
+}
+
+/* Responsive: Stack timeline vertically on small screens */
+@media (max-width: 700px) {
+  section {
+    flex-direction: column;
+    gap: 18px;
+    overflow-x: visible;
+    padding: 18px 6px 10px 6px;
+  }
+  section > div {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* Responsive: Adjust header padding and font size on small screens */
+@media (max-width: 500px) {
+  header {
+    padding: 22px 0 16px 0;
+  }
+  header h1 {
+    font-size: 1.3rem;
+  }
+  header img {
+    width: 80px;
+  }
+}
+
+/* Add a little space below the timeline for the scroll/hint text */
+p:last-of-type {
+  text-align: center;
+  color: #0071c5;
+  margin: 18px 0 30px 0;
+  font-size: 1rem;
+}
+
+/*
+  Comments:
+  - The header uses Intel's blue for branding and centers all content.
+  - The timeline uses Flexbox for horizontal scrolling on large screens and stacks vertically on small screens.
+  - Cards have a simple hover effect and are sized for easy reading.
+  - Responsive breakpoints ensure the layout works on all devices.
+  - 'scroll-snap-type' and 'scroll-snap-align' make the timeline cards snap smoothly as you scroll.
+  - Enhanced hover uses 'transform' for movement and 'box-shadow' for a pop effect.
+  - 'transition' makes the hover effect smooth and fun to interact with.
+*/
