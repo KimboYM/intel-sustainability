@@ -63,6 +63,7 @@ section > div {
 section > div:hover {
   transform: translateY(-10px) scale(1.05) rotate(-1deg); /* More dynamic movement */
   box-shadow: 0 10px 24px rgba(0,113,197,0.18), 0 2px 8px rgba(0,0,0,0.10);
+  background: #b3e0ff; /* Lighter blue on hover for Intel branding */
 }
 
 /* Card headings */
@@ -90,6 +91,30 @@ section p {
   font-size: 0.98rem;
   color: #333;
   margin: 0;
+}
+
+/* Hide the card text by default and show it on hover */
+section > div p {
+  opacity: 0; /* Make text invisible */
+  max-height: 0; /* Collapse the space */
+  overflow: hidden;
+  transition: opacity 0.3s, max-height 0.3s;
+  pointer-events: none; /* Prevent accidental selection */
+}
+
+section > div:hover p {
+  opacity: 1; /* Show text */
+  max-height: 200px; /* Enough space for the paragraph */
+  pointer-events: auto;
+}
+
+/* Optional: Add a background to the text for better readability on hover */
+section > div:hover p {
+  background: rgba(255,255,255,0.95);
+  padding: 10px 8px;
+  border-radius: 6px;
+  margin-top: 8px;
+  box-shadow: 0 2px 8px rgba(0,113,197,0.08);
 }
 
 /* Responsive: Stack timeline vertically on small screens */
@@ -137,4 +162,7 @@ p:last-of-type {
   - 'scroll-snap-type' and 'scroll-snap-align' make the timeline cards snap smoothly as you scroll.
   - Enhanced hover uses 'transform' for movement and 'box-shadow' for a pop effect.
   - 'transition' makes the hover effect smooth and fun to interact with.
+  - Card text is hidden by default and fades in with a background on hover for readability.
+  - Now, when you hover over a card, its background color changes to a lighter blue.
+  - This makes the interaction more visually engaging for students.
 */
